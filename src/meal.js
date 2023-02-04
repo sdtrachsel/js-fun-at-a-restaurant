@@ -11,26 +11,25 @@ function createMenuItem (menuItemName, price, type){
   return newMenuItem;
 };
 
-function addIngredients(addFood, ingredients){
-  // if addFood is not in ingredients push else do nothing
-  if(!ingredients.includes(addFood)){
-    ingredients.push(addFood);
+function addIngredients(ingredientToAdd, ingredients){
+   if(!ingredients.includes(ingredientToAdd)){
+    ingredients.push(ingredientToAdd);
   };
 };
 
-function formatPrice(initalPrice){
-  return `$${initalPrice}`;
+function formatPrice(unformattedPrice){
+  return `$${unformattedPrice}`;
 };
 
 function decreasePrice(initalPrice){
-  return initalPrice * .9
+  return initalPrice * .9;
 };
 
-function createRecipe(title, ingredients, type){
+function createRecipe(recipeTitle, recipeIngredients, recipeType){
   var recipe = {
-    title: title, 
-    ingredients: ingredients,
-    type: type
+    title: recipeTitle, 
+    ingredients: recipeIngredients,
+    type: recipeType
   }
   return recipe;
 };
