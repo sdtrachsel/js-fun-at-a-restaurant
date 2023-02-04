@@ -1,7 +1,7 @@
-function takeOrder(orderObject, ordersArray) {
+function takeOrder(order, ordersArray) {
   if (ordersArray.length < 3) {
-    ordersArray.push(orderObject)
-  };
+    ordersArray.push(order)
+  }
 };
 
 function refundOrder(order, ordersArray) {
@@ -9,8 +9,8 @@ function refundOrder(order, ordersArray) {
     if (order === ordersArray[i].orderNumber) {
       var index = ordersArray.indexOf(ordersArray[i]);
       ordersArray.splice(index, 1);
-    };
-  };
+    }
+  }
 };
 
 function listItems(ordersArray) {
@@ -20,17 +20,17 @@ function listItems(ordersArray) {
       itemString += `${ordersArray[i].item}`;
     } else {
       itemString += `${ordersArray[i].item}, `
-    };
-  }; 
-  return itemString;
+    }
+  }
+  return itemString
 };
 
 function searchOrder(ordersArray, orderName){
   var itemArray = [];
   for (i = 0; i < ordersArray.length; i++) {
       itemArray += ordersArray[i].item;
-  }; 
-  return itemArray.includes(orderName);
+  }
+  return itemArray.includes(orderName)
 };
 
 module.exports = {
